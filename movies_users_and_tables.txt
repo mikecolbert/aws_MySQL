@@ -1,0 +1,38 @@
+DROP DATABASE IF EXISTS movie_data;
+
+CREATE DATABASE movie_data;
+USE movie_data;
+
+DROP TABLE IF EXISTS `movies`;
+DROP TABLE IF EXISTS `genres`;
+
+CREATE TABLE movies (
+movieId int,
+imdb varchar(50),
+budget bigint, 
+revenue bigint,
+profit bigint,
+language varchar(25),
+title varchar(255),
+popularity float,
+averageRating float,
+totalRatings float,
+runtime int,
+releaseDate Date,
+releaseYear Date
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+
+CREATE TABLE genres(
+movieId int,
+genre varchar(50)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+
+CREATE USER 'movies_mgr'@'%' IDENTIFIED BY 'W*2CQ@:842s($@agvaWIMaWIM34ASO*(';
+GRANT ALL PRIVILEGES ON movie_data.* TO 'movies_mgr'@'%';
+FLUSH PRIVILEGES;
+
+CREATE USER 'movies_app'@'%' IDENTIFIED BY 'ali(Ewq38tq246acXF@#$(7aer';
+GRANT SELECT, INSERT, DELETE, UPDATE ON movie_data.* TO 'movies_app'@'%';
+FLUSH PRIVILEGES;
