@@ -4,8 +4,6 @@ Create an AWS RDS MySQL server service. Connect to it with MySQL Workbench and c
 ### Step 1: Create a VPC
 Create a MySQL database.
 
-![Creating a VPC](/images/vpc.jpg)
-
 * A. From the AWS console, under **Database**, choose **RDS**
 * B. Choose **Create database**
 * C. Select **Standard Create** --> **MySQL** --> Version **MySQL 8.0.20**
@@ -26,6 +24,9 @@ Create a MySQL database.
 We will use MySQL Workbench to connect to and manage our MySQL database running on AWS. Visit https://dev.mysql.com/downloads/workbench/ and download the Workbench package for your OS. We are only installing Workbench. Do not install anything server related.
 
 * A. Click on **Download**. You will need to sign up for a free account if you don't already have one. 
+
+![Donwload MySQL Workbench](/images/download.jpg)
+
 * B. After logging in, choose **Download Now**
 
 -- Installation instructions for Windows --
@@ -50,10 +51,15 @@ We will use MySQL Workbench to connect to and manage our MySQL database running 
 * F. Modify **Source** to be *My IP* with a **Description** of *MySQL Workbench from my home computer*, then **Save rules**
 * G. Visit the RDS console again to make sure your database status is *Available*
 
+![Connect MySQL Workbench to your database](/images/connection.jpg)
+
 * H. From MySQL Workbench, click to **add** a new connection.
 * I. Connection Name: *AWS Movies* (it can be anything descriptive)
 * J. Hostname: *Database endpoint URL you copied earlier*
 * K. Click **Test Connection** --> **paste** in your database password --> **check** Save password in vault --> OK 
+
+![Connection successful](/images/connection-successful.jpg)
+
 * L. Double-click the connection tile to open a connection to your database.
 
 ***
